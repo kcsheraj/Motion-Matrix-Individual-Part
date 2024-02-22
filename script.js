@@ -53,6 +53,7 @@ const renderCalendar = () => {
   }
   currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
   daysTag.innerHTML = liTag;
+  attachDateClickListeners(); // Attach click event listeners to each date
 };
 renderCalendar();
 
@@ -75,3 +76,13 @@ prevNextIcon.forEach((icon) => {
     renderCalendar(); // calling renderCalendar function
   });
 });
+
+function attachDateClickListeners() {
+  const dateItems = document.querySelectorAll(".days li");
+  dateItems.forEach((dateItem) => {
+    dateItem.addEventListener("click", () => {
+      // Toggle 'green' class on the clicked date item
+      dateItem.classList.toggle("green");
+    });
+  });
+}

@@ -82,7 +82,7 @@ header .current-date {
   color: #aaa;
 }
 .days li.active {
-  color: #fff;
+  color: #333;
 }
 .days li::before {
   position: absolute;
@@ -100,4 +100,8 @@ header .current-date {
 }
 .days li:not(.active):hover::before {
   background: #f2f2f2;
+}
+
+.days li.green::before {
+  background: green; /* Background color when clicked */
 }
